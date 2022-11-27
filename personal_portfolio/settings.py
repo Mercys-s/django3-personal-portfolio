@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(#&&$y-y4$011i0ud6+zc-u#=+x!z7onua&6h^h%d770%$nbo&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['sunsetdeho.pythonanywhere.com']
+
 
 
 # Application definition
@@ -130,3 +130,8 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = Path (BASE_DIR, 'media')
 
+try:
+    from .local_settings import *
+
+except ImportError:
+    print("Looks like no local file. You must be on production") 
